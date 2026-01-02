@@ -1,6 +1,6 @@
 {
 	"name": "@slipum-prod/prettier",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "This is a Prettier config for Slipum's projects",
 	"type": "module",
 	"keywords": [
