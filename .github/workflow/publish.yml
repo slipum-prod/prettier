@@ -10,16 +10,16 @@ job:
     name: Publish Job
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository # название для шага
-        uses: actions/checkout@v4 # нужно чтобы забрать код из репозитория
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Setup Node.JS # название для шага
-        uses: actions/setup-node@v4 # устанавливаем nodejs
-        with: # для публикации в npm
-          node-version: 20 # указываем версию nodejs
+      - name: Setup Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Publish package # название для шага
-        run: npm publish # через 'run' команды исполняем
+      - name: Publish package
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
