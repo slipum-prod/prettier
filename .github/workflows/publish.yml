@@ -2,10 +2,10 @@ name: Publish
 
 on:
   push:
-    branche:
+    branches:
       - main
 
-job:
+jobs:
   publish:
     name: Publish Job
     runs-on: ubuntu-latest
