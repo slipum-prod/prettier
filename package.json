@@ -1,0 +1,24 @@
+{
+	"name": "@slipum-prod/prettier",
+	"version": "1.0.0",
+	"description": "This is a Prettier config for Slipum's projects",
+	"type": "module",
+	"keywords": [
+		"prettier",
+		"config"
+	],
+	"author": "Slipum",
+	"license": "ISC",
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"prettier": "^3.7.4"
+	},
+	"peerDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^6.0.1"
+	},
+	"exports": {
+		"./prettier": "./src/prettier.config.mjs"
+	}
+}

@@ -1,0 +1,25 @@
+name: Publish
+
+on:
+  push:
+    branche:
+      - main
+
+job:
+  publish:
+    name: Publish Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository # название для шага
+        uses: actions/checkout@v4 # нужно чтобы забрать код из репозитория
+
+      - name: Setup Node.JS # название для шага
+        uses: actions/setup-node@v4 # устанавливаем nodejs
+        with: # для публикации в npm
+          node-version: 20 # указываем версию nodejs
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Publish package # название для шага
+        run: npm publish # через 'run' команды исполняем
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
